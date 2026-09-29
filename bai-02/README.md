@@ -27,6 +27,4 @@ Màn hình chính nằm ở `src/src/app/index.tsx`.
 
 ## Video demo
 
-File demo (`Record bài số 2.mp4`, ~247MB) vượt quá giới hạn 50MB và máy chưa cài `ffmpeg` để nén, nên video được để trực tiếp trên Google Drive thay vì commit vào repo:
-
 [Xem video demo](https://drive.google.com/file/d/1aKNCUqSAgx41VEyIuwFRsY3VUK3MagNn/view?usp=drive_link)
