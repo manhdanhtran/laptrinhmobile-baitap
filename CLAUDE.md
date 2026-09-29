@@ -18,13 +18,7 @@ bai-XX/
 ## Quy ước đặt tên file
 
 - Ảnh giao diện chính: `screenshots/main-screen.png`
-- Video demo: `demo/demo.mp4`
-  - **Bắt buộc dưới 50MB.**
-  - Nếu file gốc lớn hơn 50MB, nén bằng ffmpeg trước khi commit:
-    ```bash
-    ffmpeg -i input.mp4 -vcodec libx264 -vf scale=-2:720 -crf 28 -an demo/demo.mp4
-    ```
-    (H.264, 720p, CRF 28, bỏ audio `-an` nếu audio không cần thiết. Nếu vẫn còn >50MB, tăng CRF hoặc giảm độ phân giải thêm.)
+- Video demo: tôi sẽ gửi link drive - bạn gán trực tiếp vào github là đc
 
 ## Nội dung mỗi `bai-XX/README.md`
 
@@ -39,7 +33,7 @@ Phải có đủ các mục sau, theo đúng thứ tự:
    ```
 5. Link video demo:
    ```markdown
-   [Xem video demo](./demo/demo.mp4)
+   [Xem video demo] - Link drive
    ```
 
 ## Cập nhật README root
