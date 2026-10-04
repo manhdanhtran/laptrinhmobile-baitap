@@ -87,4 +87,4 @@ Logic nằm trong `handleClick` của `src/src/screens/Screen1.tsx`:
 
 ## Video demo
 
-[Xem video demo](https://drive.google.com/file/d/1bjOUZkwsC_RbP81QFbOKimqP4hrPT65J/view?usp=sharing)
+[Xem video demo](https://drive.google.com/drive/folders/1wmTQ9ofRH7absqcg-NSc_CkTC9Mp3x6e)
