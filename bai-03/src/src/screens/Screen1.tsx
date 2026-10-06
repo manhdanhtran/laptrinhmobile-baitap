@@ -14,6 +14,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type Errors = { userName?: string; mssv?: string };
 
+const MSSV_REGEX = /^B[A-Z]{2}(2[2-6])\d{4}$/i;
+
 const Screen1 = () => {
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -22,20 +24,23 @@ const Screen1 = () => {
   const [mssv, setMssv] = useState('');
   const [errors, setErrors] = useState<Errors>({});
 
-  // Validate: trim() rồi kiểm tra rỗng, ô nào trống thì gán lỗi cho ô đó
   const handleClick = () => {
     const name = userName.trim();
     const id = mssv.trim();
     const newErrors: Errors = {};
     if (!name) newErrors.userName = 'Vui lòng nhập UserName';
-    if (!id) newErrors.mssv = 'Vui lòng nhập MSSV';
+    if (!id) {
+      newErrors.mssv = 'Vui lòng nhập MSSV';
+    } else if (!MSSV_REGEX.test(id)) {
+      newErrors.mssv = 'MSSV không đúng định dạng (VD: BIT241234, khóa 22-26)';
+    }
     setErrors(newErrors);
 
     // Có lỗi thì không chuyển màn hình
     if (newErrors.userName || newErrors.mssv) return;
 
-    // Truyền dữ liệu (đã trim) sang Screen 2 qua route params
-    router.push({ pathname: '/screen2', params: { userName: name, mssv: id } });
+    // Truyền dữ liệu (đã trim và viết hoa) sang Screen 2 qua route params
+    router.push({ pathname: '/screen2', params: { userName: name, mssv: id.toUpperCase() } });
   };
 
   return (
@@ -110,7 +115,7 @@ const Screen1 = () => {
             <Text style={styles.label}>MSSV</Text>
             <TextInput
               style={[styles.input, errors.mssv && styles.inputError]}
-              placeholder="MSSV"
+              placeholder="MSSV (VD: BIT241234)"
               placeholderTextColor="#999999"
               value={mssv}
               onChangeText={(text) => {
@@ -118,6 +123,7 @@ const Screen1 = () => {
                 if (errors.mssv) setErrors((e) => ({ ...e, mssv: undefined }));
               }}
               autoCapitalize="characters"
+              maxLength={9}
               returnKeyType="done"
               onSubmitEditing={handleClick}
             />
