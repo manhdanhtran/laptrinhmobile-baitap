@@ -3,7 +3,7 @@ import { I18n } from 'i18n-js';
 
 const translations = {
   en: {
-    studentListTitle: "Students",
+    studentListTitle: "Student Management",
     emptyList: "No students found. Add one!",
     addStudent: "Add",
     editStudent: "Edit",
@@ -33,7 +33,7 @@ const translations = {
     errorUnknown: "An unexpected error occurred"
   },
   vi: {
-    studentListTitle: "Danh sách Sinh viên",
+    studentListTitle: "Quản lý Sinh Viên",
     emptyList: "Chưa có sinh viên nào. Hãy thêm mới!",
     addStudent: "Thêm",
     editStudent: "Sửa",
