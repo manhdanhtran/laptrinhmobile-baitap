@@ -1,0 +1,9 @@
+{
+  "ios": {
+    "CFBundleDisplayName": "Quản lý Sinh viên",
+    "NSPhotoLibraryUsageDescription": "Ứng dụng cần quyền truy cập ảnh để chọn ảnh đại diện."
+  },
+  "android": {
+    "app_name": "Quản lý Sinh viên"
+  }
+}
